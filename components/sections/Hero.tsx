@@ -3,8 +3,11 @@ import { images } from "@/lib/image-paths";
 
 export function Hero() {
   return (
-    <section id="hero" className="bg-black px-4 pt-4 md:px-6 md:pt-6 lg:px-8">
-      <div className="relative mx-auto min-h-[580px] max-w-[1400px] overflow-hidden rounded-3xl md:min-h-[680px] lg:min-h-[760px]">
+    <section
+      id="hero"
+      className="w-full overflow-x-hidden bg-black px-4 pt-4 md:px-6 md:pt-6 lg:px-8"
+    >
+      <div className="relative mx-auto min-h-[580px] w-full max-w-[1400px] overflow-hidden rounded-3xl md:min-h-[680px] lg:min-h-[760px]">
         <div className="absolute inset-0 bg-black">
           <Image
             src={images.heroBg}
@@ -42,15 +45,16 @@ export function Hero() {
               </a>
             </div>
 
-            <div className="flex justify-center lg:justify-end">
+            <div className="flex max-w-full justify-center lg:justify-end">
               <Image
                 src={images.heroMobile}
                 alt="Blumu mobile programėlė"
                 width={340}
                 height={690}
-                priority
-                sizes="(max-width: 640px) 240px, (max-width: 1024px) 320px, 340px"
-                className="h-auto w-[240px] sm:w-[280px] md:w-[320px] lg:w-[340px]"
+                loading="lazy"
+                fetchPriority="low"
+                sizes="(max-width: 640px) 200px, (max-width: 1024px) 280px, 340px"
+                className="h-auto max-w-full w-[200px] sm:w-[240px] md:w-[280px] lg:w-[320px] xl:w-[340px]"
               />
             </div>
           </div>

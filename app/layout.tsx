@@ -29,7 +29,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="lt" className={`${inter.variable} ${poppins.variable} h-full antialiased dark`}>
+    <html
+      lang="lt"
+      className={`${inter.variable} ${poppins.variable} h-full overflow-x-hidden antialiased dark`}
+    >
       <head>
         <link
           rel="preload"
@@ -39,7 +42,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${poppins.variable} min-h-full overflow-x-hidden bg-black font-sans text-white antialiased`}
+        className={`${inter.variable} ${poppins.variable} relative min-h-full overflow-x-hidden bg-black font-sans text-white antialiased`}
       >
         <HashScrollOnNavigate />
         {children}

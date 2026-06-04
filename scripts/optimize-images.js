@@ -5,7 +5,7 @@ const path = require('path');
 // Pagal Next.js Image displayinimo dydžius, plus 2x retina margin
 const targets = [
   // Above-fold (hero) — kritiški
-  { file: 'hero_bg.webp', maxWidth: 1920, quality: 72, effort: 6 },
+  { file: 'hero_bg.webp', maxWidth: 1600, quality: 65, effort: 6 },
   { file: 'hero_mobile.webp', maxWidth: 720, quality: 80, effort: 6 },
   
   // Below-fold
