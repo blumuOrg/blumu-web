@@ -48,7 +48,7 @@ export function Hero() {
                 alt="Blumu mobile programėlė"
                 width={340}
                 height={690}
-                loading="lazy"
+                priority
                 sizes="(max-width: 640px) 240px, (max-width: 1024px) 320px, 340px"
                 className="h-auto w-[240px] sm:w-[280px] md:w-[320px] lg:w-[340px]"
               />

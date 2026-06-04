@@ -30,6 +30,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="lt" className={`${inter.variable} ${poppins.variable} h-full antialiased dark`}>
+      <head>
+        <link
+          rel="preload"
+          as="image"
+          href="/images/hero_bg.webp"
+          fetchPriority="high"
+        />
+      </head>
       <body
         className={`${inter.variable} ${poppins.variable} min-h-full overflow-x-hidden bg-black font-sans text-white antialiased`}
       >
