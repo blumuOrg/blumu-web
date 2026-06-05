@@ -1,6 +1,7 @@
 /** Central image paths — prefer WebP; PNG kept as fallback in /public only. */
 export const images = {
   heroBg: "/images/hero_bg.webp",
+  heroBgMobile: "/images/hero_bg_mobile.webp",
   heroMobile: "/images/hero_mobile.webp",
   logo: "/images/logo.webp",
   whoisBlumu: "/images/whois_blumu.webp",
