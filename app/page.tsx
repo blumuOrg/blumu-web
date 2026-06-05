@@ -9,12 +9,18 @@ import { Hero } from "@/components/sections/Hero";
 import { Pricing } from "@/components/sections/Pricing";
 import { images } from "@/lib/image-paths";
 
-const FAQ = dynamic(() =>
-  import("@/components/sections/FAQ").then((mod) => mod.FAQ),
+const FAQ = dynamic(
+  () => import("@/components/sections/FAQ").then((mod) => mod.FAQ),
+  {
+    loading: () => <div style={{ minHeight: "700px" }} />,
+  },
 );
 
-const Contact = dynamic(() =>
-  import("@/components/sections/Contact").then((mod) => mod.Contact),
+const Contact = dynamic(
+  () => import("@/components/sections/Contact").then((mod) => mod.Contact),
+  {
+    loading: () => <div style={{ minHeight: "500px" }} />,
+  },
 );
 
 export default function HomePage() {
