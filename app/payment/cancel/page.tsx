@@ -1,18 +1,15 @@
-import Link from "next/link";
 import { MarketingShell } from "@/components/layout/MarketingShell";
-import { PlaceholderMessage } from "@/components/PlaceholderMessage";
+import { PaymentStatusView } from "@/components/payment/PaymentStatusView";
 
 export default function PaymentCancelPage() {
   return (
     <MarketingShell>
-      <div className="flex flex-1 flex-col">
-        <PlaceholderMessage title="Mokėjimas atšauktas" message="Atšaukta" />
-        <p className="pb-16 text-center">
-          <Link href="/pricing" className="text-[#E85002] hover:underline">
-            Grįžti į kainas
-          </Link>
-        </p>
-      </div>
+      <PaymentStatusView
+        title="Mokėjimas atšauktas"
+        message="Mokėjimas nebuvo užbaigtas. Gali bandyti dar kartą programėlėje."
+        actionHref="blumu://payment/cancel"
+        actionLabel="Grįžti į programėlę"
+      />
     </MarketingShell>
   );
 }
