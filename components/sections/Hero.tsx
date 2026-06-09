@@ -67,7 +67,7 @@ function HeroDesktopCopy() {
         className="font-display font-medium text-white"
         style={{
           fontSize: "clamp(48px, 5vw, 72px)",
-          lineHeight: 1.0,
+          lineHeight: 1.2,
           letterSpacing: "-0.03em",
         }}
       >
