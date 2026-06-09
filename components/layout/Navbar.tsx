@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { BlumuLogo } from "@/components/layout/BlumuLogo";
 import { images } from "@/lib/image-paths";
+import { cn } from "@/lib/utils";
 import {
   Sheet,
   SheetContent,
@@ -26,23 +27,36 @@ const sheetIconBtnClass =
 function StoreIconLink({
   src,
   label,
-  size = 24,
+  bordered = false,
 }: {
   src: string;
   label: string;
-  size?: number;
+  bordered?: boolean;
 }) {
   return (
-    <a href="#" aria-label={label} className={sheetIconBtnClass}>
-      <Image src={src} alt="" width={size} height={size} className="h-6 w-6" />
+    <a
+      href="#"
+      aria-label={label}
+      className={cn(
+        "flex h-9 w-9 shrink-0 items-center justify-center transition hover:opacity-80",
+        bordered && sheetIconBtnClass,
+      )}
+    >
+      <Image
+        src={src}
+        alt=""
+        width={36}
+        height={36}
+        className="h-9 w-9"
+      />
     </a>
   );
 }
 
 function StoreButtons({
   className,
-  iconClassName = "h-11 w-11",
-  iconSize = 44,
+  iconClassName = "h-9 w-9",
+  iconSize = 36,
 }: {
   className?: string;
   iconClassName?: string;
@@ -80,14 +94,26 @@ function StoreButtons({
   );
 }
 
-export function Navbar() {
+type NavbarProps = {
+  overlay?: boolean;
+};
+
+export function Navbar({ overlay = false }: NavbarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="relative z-50 px-4">
-      <div className="mx-auto flex max-w-7xl items-center justify-between rounded-2xl border border-white/10 bg-black/40 px-5 py-3 backdrop-blur-md">
-        <Link href="/" className="shrink-0">
-          <BlumuLogo />
+    <header
+      className={cn(
+        "z-50 w-full",
+        overlay
+          ? "absolute inset-x-0 top-0"
+          : "relative border-b border-white/10 bg-black/80 backdrop-blur-md",
+      )}
+    >
+      <div className="flex min-h-14 w-full items-center justify-between px-5 py-2 md:h-[6rem] md:py-0 md:pl-8 md:pr-6 lg:pl-14 lg:pr-10 xl:pl-20 xl:pr-12">
+        <Link href="/" className="shrink-0 pl-1 md:pl-0">
+          <BlumuLogo size="lg" className="md:hidden" />
+          <BlumuLogo size="md" className="hidden md:block" />
         </Link>
 
         <nav
@@ -98,7 +124,7 @@ export function Navbar() {
             <Link
               key={href}
               href={href}
-              className="text-sm text-white/80 transition hover:text-white"
+              className="text-sm font-medium text-white/85 transition hover:text-white"
             >
               {label}
             </Link>
@@ -109,13 +135,15 @@ export function Navbar() {
           <StoreButtons className="flex items-center gap-3" />
         </div>
 
-        <div className="md:hidden">
+        <div className="flex items-center gap-2 md:hidden">
+          <StoreIconLink src={images.navbarAppStore} label="App Store" />
+          <StoreIconLink src={images.navbarGooglePlay} label="Google Play" />
           <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
             <SheetTrigger
               render={
                 <button
                   type="button"
-                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/15 bg-white/5 transition hover:border-white/25 hover:bg-white/10"
+                  className={sheetIconBtnClass}
                   aria-label="Atidaryti meniu"
                 />
               }
@@ -136,24 +164,14 @@ export function Navbar() {
                 >
                   <BlumuLogo size="sm" priority={false} />
                 </Link>
-                <div className="flex shrink-0 items-center gap-2">
-                  <StoreIconLink
-                    src={images.navbarAppStore}
-                    label="App Store"
-                  />
-                  <StoreIconLink
-                    src={images.navbarGooglePlay}
-                    label="Google Play"
-                  />
-                  <button
-                    type="button"
-                    className={sheetIconBtnClass}
-                    aria-label="Uždaryti meniu"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    <X className="h-4 w-4 text-white" strokeWidth={2.5} />
-                  </button>
-                </div>
+                <button
+                  type="button"
+                  className={sheetIconBtnClass}
+                  aria-label="Uždaryti meniu"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  <X className="h-4 w-4 text-white" strokeWidth={2.5} />
+                </button>
               </div>
 
               <nav className="mt-5 flex flex-col" aria-label="Mobilus meniu">
@@ -161,7 +179,7 @@ export function Navbar() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="py-3.5 text-base text-white transition hover:text-[#E85002]"
+                    className="py-3.5 text-base font-medium text-white transition hover:text-[#E85002]"
                     onClick={() => setMenuOpen(false)}
                   >
                     {item.label}

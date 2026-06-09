@@ -70,7 +70,7 @@ function FeatureColumn({ items }: { items: FeatureData[] }) {
 
 export function Features() {
   return (
-    <section id="privalumai" className="bg-black py-20 md:py-28">
+    <section id="privalumai" className="w-full bg-black py-20 md:py-28">
       <Container>
         <h2 className="text-center font-display text-4xl font-bold text-white md:text-5xl">
           BLUMU privalumai

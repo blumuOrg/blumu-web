@@ -6,7 +6,7 @@ import { images } from "@/lib/image-paths";
 
 export function AboutBlumu() {
   return (
-    <section id="apie" className="bg-black py-20 md:py-28">
+    <section id="apie" className="w-full bg-black py-20 md:py-28">
       <Container>
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
           <div className="flex justify-center">

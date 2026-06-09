@@ -3,7 +3,7 @@ export const images = {
   heroBg: "/images/hero_bg.webp",
   heroBgMobile: "/images/hero_bg_mobile.webp",
   heroMobile: "/images/hero_mobile.webp",
-  logo: "/images/logo.webp",
+  logo: "/images/blumu_logo_no_bg.svg",
   whoisBlumu: "/images/whois_blumu.webp",
   blumuPrivalumai: "/images/blumu_privalumai.webp",
   klientai: "/images/klientai.webp",

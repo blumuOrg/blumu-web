@@ -14,7 +14,7 @@ const planFeatures = [
 
 export function Pricing() {
   return (
-    <section id="ikainiai" className="bg-black py-20 md:py-28">
+    <section id="ikainiai" className="w-full bg-black py-20 md:py-28">
       <Container>
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
           <div className="order-2 lg:order-1">

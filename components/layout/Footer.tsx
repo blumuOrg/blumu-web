@@ -13,7 +13,7 @@ const footerLinks = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-black">
+    <footer className="w-full border-t border-white/10 bg-black">
       <Container className="py-16">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
           <div>

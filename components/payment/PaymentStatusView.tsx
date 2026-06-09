@@ -1,4 +1,5 @@
 import { Loader2 } from "lucide-react";
+import { Container } from "@/components/layout/Container";
 import { ctaButtonClass } from "@/lib/cta";
 import { cn } from "@/lib/utils";
 
@@ -20,9 +21,9 @@ export function PaymentStatusView({
   className,
 }: PaymentStatusViewProps) {
   return (
-    <div
+    <Container
       className={cn(
-        "mx-auto flex max-w-2xl flex-1 flex-col items-center justify-center px-4 py-16 text-center",
+        "flex max-w-2xl flex-1 flex-col items-center justify-center py-16 text-center",
         className,
       )}
     >
@@ -41,6 +42,6 @@ export function PaymentStatusView({
           {actionLabel}
         </a>
       ) : null}
-    </div>
+    </Container>
   );
 }

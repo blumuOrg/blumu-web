@@ -4,7 +4,7 @@ import { images } from "@/lib/image-paths";
 
 export function DownloadCTA() {
   return (
-    <section id="atsisiusk" className="bg-black py-12 md:py-16">
+    <section id="atsisiusk" className="w-full bg-black py-12 md:py-16">
       <Container className="text-center">
         <h2 className="text-xl font-medium text-white md:text-2xl">
           Parsisiųsk ir pradėk naudotis jau ŠIANDIEN!

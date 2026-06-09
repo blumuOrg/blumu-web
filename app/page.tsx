@@ -24,9 +24,11 @@ const Contact = dynamic(
 export default function HomePage() {
   return (
     <>
-      <Navbar />
-      <main className="bg-black text-white">
+      <div className="relative bg-black">
+        <Navbar overlay />
         <Hero />
+      </div>
+      <main className="bg-black text-white">
         <AboutBlumu />
         <DownloadCTA />
         <Features />

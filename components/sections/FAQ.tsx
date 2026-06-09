@@ -35,7 +35,7 @@ function FaqAccordion({ items }: { items: FaqEntry[] }) {
 
 export function FAQ() {
   return (
-    <section id="duk" className="overflow-hidden bg-black py-20 md:py-24">
+    <section id="duk" className="w-full overflow-hidden bg-black py-20 md:py-24">
       <Container>
         <h2 className="text-center font-display text-4xl font-bold text-white md:text-5xl">
           Dažniausiai užduodami klausimai
