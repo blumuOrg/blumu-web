@@ -8,6 +8,7 @@ import { images } from "@/lib/image-paths";
  */
 
 function HeroBackground({ variant }: { variant: "desktop" | "mobile" }) {
+  // Canvas aspect (desktop) matches the source image, so cover === contain — no cropping.
   return (
     <div className="absolute inset-0" aria-hidden>
       <picture>
@@ -24,14 +25,15 @@ function HeroBackground({ variant }: { variant: "desktop" | "mobile" }) {
           alt=""
           fetchPriority="high"
           decoding="async"
-          className="h-full w-full object-cover object-[center_75%]"
+          className="h-full w-full object-cover object-center"
         />
       </picture>
 
       {variant === "desktop" ? (
         <>
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/35 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent" />
+          {/* subtle, lets the artwork breathe */}
+          <div className="absolute inset-0 bg-black/45" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/35 via-transparent to-transparent" />
         </>
       ) : (
         <>
@@ -60,37 +62,56 @@ function HeroOrangeGlow({ className }: { className?: string }) {
 
 function HeroDesktopCopy() {
   return (
-    <div className="pointer-events-auto flex w-full max-w-[1100px] items-start gap-8 xl:gap-12">
-      <div className="shrink-0">
-        <h1 className="font-display text-[2.5rem] leading-[1.08] font-medium text-white xl:text-[3.25rem]">
-          Pagalba,
-          <br />
-          kai jos reikia.
-        </h1>
-        <div className="mt-7">
-          <a
-            href="#privalumai"
-            className="inline-block rounded-full bg-[#E85002] px-7 py-3 text-base font-semibold text-white shadow-lg transition hover:bg-[#d04600]"
-          >
-            Sužinoti Daugiau
-          </a>
-        </div>
-      </div>
-      <p className="max-w-[520px] pt-2 text-base leading-snug font-normal text-zinc-200 xl:max-w-[560px] xl:pt-3 xl:text-lg">
+    <div className="pointer-events-auto flex w-full max-w-[560px] flex-col items-start">
+      <h1
+        className="font-display font-medium text-white"
+        style={{
+          fontSize: "clamp(48px, 5vw, 72px)",
+          lineHeight: 1.0,
+          letterSpacing: "-0.03em",
+        }}
+      >
+        Pagalba,
+        <br />
+        kai jos reikia.
+      </h1>
+      <p
+        className="mt-9 max-w-[540px] text-zinc-200 xl:mt-11"
+        style={{
+          fontSize: "clamp(17px, 1.35vw, 21px)",
+          lineHeight: 1.4,
+        }}
+      >
         Rask patikimus specialistus savo mieste arba sukurk užduotį ir gauk
         pasiūlymus realiu laiku.
       </p>
+      <a
+        href="#privalumai"
+        className="mt-9 inline-flex items-center rounded-[18px] bg-[#E85002] px-8 text-base font-semibold text-white shadow-lg transition hover:bg-[#d04600] xl:mt-11"
+        style={{ height: 56 }}
+      >
+        Sužinoti Daugiau
+      </a>
     </div>
   );
 }
 
 function HeroDesktopPhone() {
+  // Anchored to the canvas bottom, slight translateY downwards
+  // → phone bottom (and the orange glow under it) extend past the canvas edge.
+  // Width is clamp-driven so the phone stays modest in size, never overlapping
+  // the navbar pill at the top of the canvas.
   return (
-    <div className="pointer-events-none absolute right-6 -bottom-2 z-20 h-[86%] xl:right-10">
-      <div
-        className="relative h-full"
-        style={{ aspectRatio: "340 / 700" }}
-      >
+    <div
+      className="pointer-events-none absolute z-20"
+      style={{
+        right: "clamp(120px, 14%, 240px)",
+        bottom: 0,
+        width: "clamp(260px, 22%, 360px)",
+        transform: "translateY(clamp(18px, 3vh, 48px))",
+      }}
+    >
+      <div className="relative w-full" style={{ aspectRatio: "340 / 700" }}>
         <HeroOrangeGlow className="left-[55%]" />
         <Image
           src={images.heroMobile}
@@ -98,7 +119,7 @@ function HeroDesktopPhone() {
           fill
           loading="lazy"
           fetchPriority="low"
-          sizes="(min-width: 1280px) 400px, 320px"
+          sizes="(min-width: 1280px) 320px, 260px"
           className="relative z-10 object-contain"
         />
       </div>
@@ -114,23 +135,41 @@ function HeroDesktopPhone() {
  */
 function HeroDesktop() {
   return (
-    <div className="relative hidden h-screen w-full lg:block">
-      {/* Image panel fills the viewport (100vw × 100vh) with a small inset.
-          object-cover keeps the collage edge-to-edge regardless of monitor aspect. */}
-      <div className="absolute inset-0 px-3 pt-3 pb-3">
-        <div className="relative h-full w-full overflow-hidden rounded-3xl bg-black p-2">
-          <div className="relative h-full w-full overflow-hidden rounded-2xl">
-            <HeroBackground variant="desktop" />
-          </div>
+    <div className="relative hidden w-full justify-center pt-5 pb-2 lg:flex">
+      {/*
+        Frame = same aspect & width as the canvas, but NOT overflow-hidden.
+        - The image canvas (child) clips its own background with rounded corners.
+        - The phone sits as a sibling so it can extend below the canvas
+          (the orange glow shows beneath the rounded image edge).
+        - Text overlay also sits relative to the frame.
+      */}
+      <div
+        className="relative mx-auto aspect-[1600/1042]"
+        style={{
+          width:
+            "min(calc(100% - 40px), 1440px, calc((100vh - 60px) * 1600 / 1042))",
+        }}
+      >
+        {/* Image canvas — rounded, clips the background only */}
+        <div className="absolute inset-0 overflow-hidden rounded-[28px] bg-black">
+          <HeroBackground variant="desktop" />
         </div>
-      </div>
 
-      {/* Text overlay — vertically centered in the viewport, navbar-safe top padding */}
-      <div className="pointer-events-none absolute inset-0 z-10 flex items-center pt-[6rem] pl-8 lg:pl-14 xl:pl-20">
-        <HeroDesktopCopy />
-      </div>
+        {/* Content layer */}
+        <div
+          className="absolute z-10"
+          style={{
+            left: "clamp(0px, 3%, 100px)",
+            right: "clamp(40px, 5%, 80px)",
+            top: "clamp(140px, 24%, 220px)",
+          }}
+        >
+          <HeroDesktopCopy />
+        </div>
 
-      <HeroDesktopPhone />
+        {/* Phone mockup — extends past the canvas bottom */}
+        <HeroDesktopPhone />
+      </div>
     </div>
   );
 }

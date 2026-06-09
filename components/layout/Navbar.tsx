@@ -106,11 +106,13 @@ export function Navbar({ overlay = false }: NavbarProps) {
       className={cn(
         "z-50 w-full",
         overlay
-          ? "absolute inset-x-0 top-0"
+          ? // Visual-only styling. Positioning + sizing handled by the page-level
+            // wrappers (so mobile uses an inset pill and desktop uses a canvas-aligned pill).
+            "h-full rounded-[18px] border border-white/14 bg-black/55 shadow-[0_10px_35px_rgba(0,0,0,0.25)] backdrop-blur-xl"
           : "relative border-b border-white/10 bg-black/80 backdrop-blur-md",
       )}
     >
-      <div className="flex min-h-14 w-full items-center justify-between px-5 py-2 md:h-[6rem] md:py-0 md:pl-8 md:pr-6 lg:pl-14 lg:pr-10 xl:pl-20 xl:pr-12">
+      <div className="flex h-full min-h-14 w-full items-center justify-between px-4 py-2 lg:py-0 lg:pl-7 lg:pr-5">
         <Link href="/" className="shrink-0 pl-1 md:pl-0">
           <BlumuLogo size="lg" className="md:hidden" />
           <BlumuLogo size="md" className="hidden md:block" />

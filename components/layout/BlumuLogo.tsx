@@ -9,9 +9,12 @@ type BlumuLogoProps = {
 };
 
 const logoDimensions = {
-  sm: { w: 96, h: 24 },
-  md: { w: 320, h: 84 },
-  lg: { w: 200, h: 80 },
+  // sm + lg keep object-contain on a square box (existing usages).
+  sm: { w: 96, h: 24, fit: "contain" as const },
+  // md crops the surrounding black padding so the visible BLUMU text
+  // ends up ~92px wide in the desktop navbar (was much smaller before).
+  md: { w: 160, h: 52, fit: "cover" as const },
+  lg: { w: 200, h: 80, fit: "contain" as const },
 } as const;
 
 export function BlumuLogo({
@@ -19,7 +22,7 @@ export function BlumuLogo({
   className,
   priority = true,
 }: BlumuLogoProps) {
-  const { w, h } = logoDimensions[size];
+  const { w, h, fit } = logoDimensions[size];
 
   return (
     <Image
@@ -29,7 +32,10 @@ export function BlumuLogo({
       height={h}
       priority={priority}
       sizes={`${w}px`}
-      className={cn("object-contain object-left", className)}
+      className={cn(
+        fit === "cover" ? "object-cover object-center" : "object-contain object-left",
+        className,
+      )}
       style={{ width: w, height: h }}
     />
   );

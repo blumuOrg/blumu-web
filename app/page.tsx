@@ -25,7 +25,13 @@ export default function HomePage() {
   return (
     <>
       <div className="relative bg-black">
-        <Navbar overlay />
+        {/* Two positioned wrappers so the navbar sits where the design wants on each breakpoint */}
+        <div className="nav-overlay-mobile-wrap">
+          <Navbar overlay />
+        </div>
+        <div className="nav-overlay-desktop-wrap">
+          <Navbar overlay />
+        </div>
         <Hero />
       </div>
       <main className="bg-black text-white">
