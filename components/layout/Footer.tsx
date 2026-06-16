@@ -66,10 +66,10 @@ export function Footer() {
             {/* TODO: pakeisti į galutinius MB duomenis po registracijos */}
             <ul className="flex flex-col gap-2 text-sm text-zinc-300">
               <li>info@blumu.eu</li>
-              <li>+370 000 00000</li>
-              <li>MB kazkas</li>
-              <li>adresas</li>
-              <li>imones kodas</li>
+              <li>+370 603 66009</li>
+              <li>MB "Blumu"</li>
+              <li>H. Manto g. 76, LT-92222 Klaipėda</li>
+              <li>307861634</li>
             </ul>
           </div>
         </div>

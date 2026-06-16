@@ -31,7 +31,7 @@ export function AboutBlumu() {
               bet ir padėti užsakovams be vargo rasti patikimus meistrus savo mieste.
             </p>
             <p className="mt-4 text-lg leading-relaxed text-zinc-400">
-              Mes sujungiame tuos, kuriems reikia pagalbos čia ir dabar, su tikriems
+              Mes sujungiame tuos, kuriems reikia pagalbos čia ir dabar, su tikrais
               savo srities profesionalais.
             </p>
             <Link href="#privalumai" className={`${ctaButtonClass} mt-8`}>
