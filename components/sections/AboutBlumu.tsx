@@ -26,7 +26,7 @@ export function AboutBlumu() {
               Kas yra BLUMU?
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-zinc-400">
-              Tai inovatyvi, geolokacija ir patogi paieškos sistema paremta mobili
+              Tai inovatyvi, geolokacija ir patogia paieškos sistema paremta mobili
               programėlė. Ji sukurta ne tik palengvinti paslaugų teikėjų kasdienybę,
               bet ir padėti užsakovams be vargo rasti patikimus meistrus savo mieste.
             </p>

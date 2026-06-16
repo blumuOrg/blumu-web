@@ -17,11 +17,11 @@ type ContactField = {
 };
 
 const contactItems: ContactField[] = [
-  { icon: Phone, label: "Telefonas", value: "+370 000 00000" },
+  { icon: Phone, label: "Telefonas", value: "+370 603 66009" },
   {
     icon: MapPin,
     label: "Adresas",
-    value: "Gatvės g. 0, Rajono r. LT - 00000",
+    value: "H. Manto g. 76, LT-92222 Klaipėda",
   },
   { icon: Mail, label: "El. paštas", value: "info@blumu.eu" },
 ];

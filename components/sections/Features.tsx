@@ -34,7 +34,7 @@ const leftFeatures: FeatureData[] = [
     icon: MessageCircle,
     title: "Tiesioginis bendravimas",
     description:
-      "Klientas ir meistras bendrauja be tarpininkų per saugų pokalbių langą.",
+      "Klientas ir meistras bendrauja be tarpininkų per saugų pokalbio langą.",
   },
 ];
 

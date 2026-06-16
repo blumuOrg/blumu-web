@@ -28,11 +28,11 @@ export function Pricing() {
             </p>
             <p className="mt-5 leading-relaxed text-zinc-400">
               Visiems meistrams, prisijungusiems iki šios datos, vėliau bus
-              pritaikyta metams užšaldyta 15,99 €/mėn. prenumeratos kaina.
+              pritaikyta metams užšaldyta 19,99 €/mėn. prenumeratos kaina.
             </p>
-            <p className="mt-5 text-zinc-400">
+            {/* <p className="mt-5 text-zinc-400">
               Standartinė platformos kaina vėliau sieks 24,99 €/mėn.
-            </p>
+            </p> */}
             <div className="mt-10 flex items-center gap-4">
               <Image
                 src={images.klientai}
