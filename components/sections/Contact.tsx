@@ -17,7 +17,7 @@ type ContactField = {
 };
 
 const contactItems: ContactField[] = [
-  { icon: Phone, label: "Telefonas", value: "+370 603 66009" },
+  { icon: Phone, label: "Telefonas", value: "+370 611 11549" },
   {
     icon: MapPin,
     label: "Adresas",
