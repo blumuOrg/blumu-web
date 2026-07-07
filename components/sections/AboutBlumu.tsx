@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
+import { Reveal } from "@/components/motion/Reveal";
 import { ctaButtonClass } from "@/lib/cta";
 import { images } from "@/lib/image-paths";
 
@@ -9,7 +10,7 @@ export function AboutBlumu() {
     <section id="apie" className="w-full bg-black py-20 md:py-28">
       <Container>
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
-          <div className="flex justify-center">
+          <Reveal direction="left" className="flex justify-center">
             <Image
               src={images.whoisBlumu}
               alt="Blumu programėlė dviejuose telefonuose"
@@ -19,9 +20,9 @@ export function AboutBlumu() {
               sizes="(max-width: 1024px) 90vw, 500px"
               className="h-auto w-full max-w-[500px]"
             />
-          </div>
+          </Reveal>
 
-          <div>
+          <Reveal direction="right" delay={80}>
             <h2 className="font-display text-4xl font-bold text-white md:text-5xl">
               Kas yra BLUMU?
             </h2>
@@ -37,7 +38,7 @@ export function AboutBlumu() {
             <Link href="#privalumai" className={`${ctaButtonClass} mt-8`}>
               Programėlės privalumai
             </Link>
-          </div>
+          </Reveal>
         </div>
       </Container>
     </section>

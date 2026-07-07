@@ -4,20 +4,21 @@ const path = require('path');
 
 // Pagal Next.js Image displayinimo dydžius, plus 2x retina margin
 const targets = [
-  // Above-fold (hero) — kritiški
+  // Above-fold (hero) — display-sized (+ 2× retina)
   { file: 'hero_bg.webp', maxWidth: 1600, quality: 72, effort: 6 },
   {
     file: 'hero_bg_mobile.png',
     outFile: 'hero_bg_mobile.webp',
-    maxWidth: 900,
+    maxWidth: 828,
     quality: 72,
     effort: 6,
   },
-  { file: 'hero_mobile.webp', maxWidth: 720, quality: 80, effort: 6 },
+  { file: 'hero_bg_mobile.webp', maxWidth: 828, quality: 72, effort: 6 },
+  { file: 'hero_mobile.webp', maxWidth: 500, quality: 78, effort: 6 },
 
   // Below-fold
   { file: 'whois_blumu.webp', maxWidth: 1000, quality: 78, effort: 6 },
-  { file: 'blumu_privalumai.webp', maxWidth: 720, quality: 80, effort: 6 },
+  { file: 'blumu_privalumai.webp', maxWidth: 560, quality: 78, effort: 6 },
   { file: 'klientai.png', maxWidth: 400, quality: 85, effort: 6 },
 ];
 

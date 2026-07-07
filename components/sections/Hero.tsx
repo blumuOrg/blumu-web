@@ -209,7 +209,7 @@ function HeroMobile() {
             width={250}
             height={520}
             loading="eager"
-            sizes="58vw"
+            sizes="250px"
             className="relative z-10 h-auto w-full"
           />
         </div>

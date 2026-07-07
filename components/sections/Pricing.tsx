@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Check } from "lucide-react";
 import { Container } from "@/components/layout/Container";
+import { Reveal } from "@/components/motion/Reveal";
 import { images } from "@/lib/image-paths";
 
 const planFeatures = [
@@ -17,7 +18,7 @@ export function Pricing() {
     <section id="ikainiai" className="w-full bg-black py-20 md:py-28">
       <Container>
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
-          <div className="order-2 lg:order-1">
+          <Reveal direction="left" className="order-2 lg:order-1">
             <h2 className="font-display text-4xl font-bold text-white md:text-5xl">
               BLUMU įkainiai
             </h2>
@@ -47,9 +48,9 @@ export function Pricing() {
                 Jie jau išbandė, pabandyk ir tu!
               </span>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="order-1 lg:order-2">
+          <Reveal direction="right" delay={100} className="order-1 lg:order-2">
             <div className="rounded-3xl border border-white/10 bg-zinc-950 p-8 shadow-2xl md:p-10">
               <h3 className="font-display text-3xl font-bold text-white">
                 Planas meistrams
@@ -89,7 +90,7 @@ export function Pricing() {
                 Užsisakyti dabar
               </Link>
             </div>
-          </div>
+          </Reveal>
         </div>
       </Container>
     </section>

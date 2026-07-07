@@ -1,16 +1,20 @@
 import Image from "next/image";
 import { Container } from "@/components/layout/Container";
+import { Reveal } from "@/components/motion/Reveal";
 import { images } from "@/lib/image-paths";
 
 export function DownloadCTA() {
   return (
     <section id="atsisiusk" className="w-full bg-black py-12 md:py-16">
       <Container className="text-center">
-        <h2 className="text-xl font-medium text-white md:text-2xl">
-          Parsisiųsk ir pradėk naudotis jau ŠIANDIEN!
-        </h2>
+        <Reveal>
+          <h2 className="text-xl font-medium text-white md:text-2xl">
+            Parsisiųsk ir pradėk naudotis jau ŠIANDIEN!
+          </h2>
+        </Reveal>
 
-        <div className="mt-8 flex flex-wrap justify-center gap-4">
+        <Reveal delay={120}>
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
           <a href="#" className="transition hover:opacity-80">
             <Image
               src={images.appStoreLogo}
@@ -33,7 +37,8 @@ export function DownloadCTA() {
               className="h-14 w-auto"
             />
           </a>
-        </div>
+          </div>
+        </Reveal>
       </Container>
     </section>
   );

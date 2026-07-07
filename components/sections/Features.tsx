@@ -8,6 +8,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { Container } from "@/components/layout/Container";
+import { Reveal } from "@/components/motion/Reveal";
 import { FeatureItem } from "@/components/sections/FeatureItem";
 import { FeaturesPhoneVisual } from "@/components/sections/FeaturesPhoneVisual";
 
@@ -72,21 +73,25 @@ export function Features() {
   return (
     <section id="privalumai" className="w-full bg-black py-20 md:py-28">
       <Container>
-        <h2 className="text-center font-display text-4xl font-bold text-white md:text-5xl">
-          BLUMU privalumai
-        </h2>
+        <Reveal>
+          <h2 className="text-center font-display text-4xl font-bold text-white md:text-5xl">
+            BLUMU privalumai
+          </h2>
+        </Reveal>
 
-        <div className="mt-16 hidden items-center gap-12 lg:grid lg:grid-cols-3">
-          <FeatureColumn items={leftFeatures} />
-          <FeaturesPhoneVisual />
-          <FeatureColumn items={rightFeatures} />
-        </div>
+        <Reveal delay={100}>
+          <div className="mt-16 hidden items-center gap-12 lg:grid lg:grid-cols-3">
+            <FeatureColumn items={leftFeatures} />
+            <FeaturesPhoneVisual />
+            <FeatureColumn items={rightFeatures} />
+          </div>
 
-        <div className="mt-16 flex flex-col gap-10 lg:hidden">
-          <FeatureColumn items={leftFeatures} />
-          <FeaturesPhoneVisual className="py-4" />
-          <FeatureColumn items={rightFeatures} />
-        </div>
+          <div className="mt-16 flex flex-col gap-10 lg:hidden">
+            <FeatureColumn items={leftFeatures} />
+            <FeaturesPhoneVisual className="py-4" />
+            <FeatureColumn items={rightFeatures} />
+          </div>
+        </Reveal>
       </Container>
     </section>
   );
