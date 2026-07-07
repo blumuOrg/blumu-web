@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { HeroReveal } from "@/components/sections/HeroReveal";
 import { images } from "@/lib/image-paths";
 
 /* ── Desktop geometry — matches hero_bg.webp (1600×1042) ──
@@ -209,7 +208,7 @@ function HeroMobile() {
             alt="Blumu mobile programėlė"
             width={250}
             height={520}
-            priority
+            loading="eager"
             sizes="58vw"
             className="relative z-10 h-auto w-full"
           />
@@ -222,10 +221,8 @@ function HeroMobile() {
 export function Hero() {
   return (
     <section id="hero" className="relative w-full overflow-visible bg-black">
-      <HeroReveal>
-        <HeroDesktop />
-        <HeroMobile />
-      </HeroReveal>
+      <HeroDesktop />
+      <HeroMobile />
       <div className="h-4 lg:h-6" aria-hidden />
     </section>
   );

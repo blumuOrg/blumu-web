@@ -71,6 +71,7 @@ export default function RootLayout({
           rel="preload"
           as="image"
           href="/images/hero_mobile.webp"
+          media="(min-width: 1024px)"
           fetchPriority="high"
         />
       </head>
