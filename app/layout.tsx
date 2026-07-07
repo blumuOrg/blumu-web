@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import { HashScrollOnNavigate } from "@/components/layout/HashScrollOnNavigate";
+import { SITE_URL } from "@/lib/site-url";
 import "./globals.css";
 
 const inter = Inter({
@@ -18,6 +19,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Blumu — paslaugų marketplace",
   description:
     "Blumu — Lietuvos paslaugų marketplace. Rask patikimus vykdytojus arba augink savo verslą.",
@@ -63,6 +65,12 @@ export default function RootLayout({
           as="image"
           href="/images/hero_bg.webp"
           media="(min-width: 769px)"
+          fetchPriority="high"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="/images/hero_mobile.webp"
           fetchPriority="high"
         />
       </head>
