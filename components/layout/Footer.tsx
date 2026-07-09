@@ -75,7 +75,7 @@ export function Footer() {
         </div>
 
         <p className="mt-12 border-t border-white/10 pt-6 text-center text-sm text-zinc-500">
-          © 2026 MB kazkas. Visos teisės saugomos.
+          © 2026 MB Blumu. Visos teisės saugomos.
         </p>
       </Container>
     </footer>
