@@ -63,13 +63,12 @@ export function Footer() {
             <h3 className="mb-5 font-display font-semibold text-[#E85002]">
               Rekvizitai
             </h3>
-            {/* TODO: pakeisti į galutinius MB duomenis po registracijos */}
             <ul className="flex flex-col gap-2 text-sm text-zinc-300">
               <li>info@blumu.eu</li>
               <li>+370 611 11549</li>
-              <li>MB "Blumu"</li>
+              <li>MB „Blumu"</li>
               <li>H. Manto g. 76, LT-92222 Klaipėda</li>
-              <li>307861634</li>
+              <li>Įm. k. 307861634</li>
             </ul>
           </div>
         </div>

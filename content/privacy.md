@@ -1,12 +1,12 @@
 # Privatumo politika
 
-**Paskutinį kartą atnaujinta:** 2026-05-06
+**Paskutinį kartą atnaujinta:** 2026-07-10
 
-Ši privatumo politika paaiškina, kaip **MB BLUMU** (toliau – „BLUMU", „Mes", „Duomenų valdytojas") renka, naudoja ir saugo Jūsų asmens duomenis pagal Bendrąjį duomenų apsaugos reglamentą (ES) 2016/679 (toliau – „BDAR"), kai naudojatės BLUMU mobiliąja programėle (toliau – „Platforma"). Platforma sujungia paslaugų ieškančius asmenis (toliau – „Klientai") su paslaugas teikiančiais specialistais (toliau – „Meistrai").
+Ši privatumo politika paaiškina, kaip **MB „Blumu"** (toliau – „BLUMU", „Mes", „Duomenų valdytojas") renka, naudoja ir saugo Jūsų asmens duomenis pagal Bendrąjį duomenų apsaugos reglamentą (ES) 2016/679 (toliau – „BDAR"), kai naudojatės BLUMU mobiliąja programėle (toliau – „Platforma"). Platforma sujungia paslaugų ieškančius asmenis (toliau – „Klientai") su paslaugas teikiančiais specialistais (toliau – „Meistrai").
 
 ## 1. Duomenų valdytojas
 
-Jūsų asmens duomenų valdytojas yra MB BLUMU, įmonės kodas *[Įmonės kodas]*, registracijos adresas *[Adresas]*, Lietuvos Respublika. El. paštas kontaktams dėl duomenų apsaugos: [info@blumu.eu](mailto:info@blumu.eu)
+Jūsų asmens duomenų valdytojas yra **MB „Blumu"**, įmonės kodas **307861634**, PVM mokėtojo kodas **LT100020361810**, registracijos adresas **H. Manto g. 76, LT-92222 Klaipėda**, Lietuvos Respublika. Atstovauja vadovas **Benas Miškūnas**. Telefonas: **+370 611 11549**. El. paštas kontaktams dėl duomenų apsaugos: [info@blumu.eu](mailto:info@blumu.eu)
 
 ## 2. Kokius duomenis renkame ir kodėl?
 

@@ -83,7 +83,6 @@ export function Contact() {
               Mes visada pasirengę Jums padėti! Susisiekite.
             </p>
 
-            {/* TODO: pakeisti į realius kontaktus po MB registracijos */}
             <div className="mt-12 flex flex-col gap-6">
               {contactItems.map(({ icon: Icon, label, value }) => (
                 <div key={label} className="flex items-center gap-4">

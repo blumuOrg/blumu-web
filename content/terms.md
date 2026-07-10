@@ -1,5 +1,7 @@
 # Taisyklės ir sąlygos
 
+**Paskutinį kartą atnaujinta:** 2026-07-10
+
 ## 1. Bendrosios nuostatos
 
 **1.1.** Šios taisyklės (toliau – Taisyklės) nustato naudojimosi mobiliąja programėle BLUMU (toliau – Platforma) sąlygas, Platformos administratoriaus, Paslaugų Teikėjų ir Užsakovų teises, pareigas bei atsakomybę.
@@ -7,6 +9,8 @@
 **1.2.** Platforma yra informacinės visuomenės paslauga, veikianti kaip virtuali erdvė, kurioje fiziniai ar juridiniai asmenys, ieškantys paslaugų (toliau – Užsakovai), yra sujungiami su savarankiškai veiklą vykdančiais paslaugų teikėjais (toliau – Teikėjai).
 
 **1.3.** Sukurdamas paskyrą Platformoje, vartotojas patvirtina, kad susipažino su šiomis Taisyklėmis, su jomis sutinka ir įsipareigoja jų laikytis.
+
+**1.4.** Platformos administratorius yra **MB „Blumu"** (įmonės kodas 307861634, PVM mokėtojo kodas LT100020361810, registracijos adresas H. Manto g. 76, LT-92222 Klaipėda, Lietuvos Respublika). Įmonę atstovauja vadovas **Benas Miškūnas**. Kontaktai: el. paštas [info@blumu.eu](mailto:info@blumu.eu), tel. +370 611 11549.
 
 ## 2. Platformos statusas ir atsakomybės ribojimas
 
@@ -56,7 +60,7 @@
 
 **6.2. Atsiskaitymas už paslaugas:** Užsakovas atsiskaito tiesiogiai su Teikėju (grynaisiais pinigais arba bankiniu pavedimu) pagal jų tarpusavio susitarimą.
 
-**6.3. Platformos mokesčiai Teikėjams:** Platforma Užsakovams (klientams) yra nemokama. Teikėjams bazinės Platformos funkcijos yra teikiamos nemokamai bandomuoju laikotarpiu iki spalio mėnesio. Pasibaigus šiam laikotarpiui, Teikėjų paskyroms pradedamas taikyti standartinis prenumeratos mokestis, nurodytas Platformos kainyne.
+**6.3. Platformos mokesčiai Teikėjams:** Platforma Užsakovams (klientams) yra nemokama. Teikėjams bazinės Platformos funkcijos yra teikiamos nemokamai bandomuoju laikotarpiu iki **2026 m. lapkričio 1 d.** Pasibaigus šiam laikotarpiui, Teikėjų paskyroms pradedamas taikyti standartinis prenumeratos mokestis, nurodytas Platformos kainyne.
 
 **6.4. Mokamas matomumas (Skelbimų iškėlimas):** Teikėjai turi teisę savanoriškai įsigyti mokamas iškėlimo (žvaigždučių) paslaugas, kurios padidina jų profilio matomumą bendrajame paieškos kataloge. Šis mokamas iškėlimas neturi įtakos geolokaciniam žemėlapiui, kuriame Teikėjai rodomi išskirtinai pagal realų fizinį atstumą iki Užsakovo.
 
@@ -76,4 +80,4 @@
 
 **9.1.** Platformos administratorius pasilieka teisę vienašališkai keisti šias Taisykles. Apie esminius pakeitimus vartotojai informuojami programėlėje arba el. paštu.
 
-**9.2.** Visi ginčai tarp vartotojo ir Platformos sprendžiami derybų būdu, o nepavykus susitarti – Lietuvos Respublikos teismuose pagal LR įstatymus.
+**9.2.** Visi ginčai tarp vartotojo ir Platformos sprendžiami derybų būdu, raštu kreipiantis el. paštu [info@blumu.eu](mailto:info@blumu.eu) arba korespondencijos adresu H. Manto g. 76, LT-92222 Klaipėda, Lietuvos Respublika. Nepavykus susitarti – ginčai sprendžiami Lietuvos Respublikos teismuose pagal LR įstatymus.
