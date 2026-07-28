@@ -20,9 +20,9 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Blumu — paslaugų marketplace",
+  title: "Blumu — paslaugų platforma",
   description:
-    "Blumu — Lietuvos paslaugų marketplace. Rask patikimus vykdytojus arba augink savo verslą.",
+    "Blumu — Lietuvos paslaugų platforma. Rask patikimus vykdytojus arba augink savo verslą.",
   icons: {
     icon: [
       { url: "/images/favicon/favicon.ico" },
