@@ -14,6 +14,9 @@ const planFeatures = [
 ] as const;
 
 export function Pricing() {
+  return null;
+
+  /* PRICING SECTION — hidden temporarily
   return (
     <section id="ikainiai" className="w-full bg-black py-20 md:py-28">
       <Container>
@@ -33,7 +36,7 @@ export function Pricing() {
             </p>
             {/* <p className="mt-5 text-zinc-400">
               Standartinė platformos kaina vėliau sieks 24,99 €/mėn.
-            </p> */}
+            </p> *\/}
             <div className="mt-10 flex items-center gap-4">
               <Image
                 src={images.klientai}
@@ -95,4 +98,5 @@ export function Pricing() {
       </Container>
     </section>
   );
+  */
 }

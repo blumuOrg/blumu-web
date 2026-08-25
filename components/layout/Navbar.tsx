@@ -16,7 +16,7 @@ import {
 const navItems = [
   { href: "/#apie", label: "Apie" },
   { href: "/#privalumai", label: "Privalumai" },
-  { href: "/#ikainiai", label: "Įkainiai" },
+  // { href: "/#ikainiai", label: "Įkainiai" },
   { href: "/#duk", label: "D.U.K." },
   { href: "/#kontaktai", label: "Kontaktai" },
 ] as const;
@@ -106,9 +106,8 @@ export function Navbar({ overlay = false }: NavbarProps) {
       className={cn(
         "z-50 w-full",
         overlay
-          ? // Visual-only styling. Positioning + sizing handled by the page-level
-            // wrappers (so mobile uses an inset pill and desktop uses a canvas-aligned pill).
-            "h-full rounded-[18px] border border-white/14 bg-black/55 shadow-[0_10px_35px_rgba(0,0,0,0.25)] backdrop-blur-xl"
+          ? // Mobile: flat bar. Desktop (lg+): rounded glass pill (positioned by page wrappers).
+            "h-full bg-black/80 backdrop-blur-md lg:rounded-[18px] lg:border lg:border-white/14 lg:bg-black/55 lg:shadow-[0_10px_35px_rgba(0,0,0,0.25)] lg:backdrop-blur-xl"
           : "relative border-b border-white/10 bg-black/80 backdrop-blur-md",
       )}
     >
@@ -161,10 +160,10 @@ export function Navbar({ overlay = false }: NavbarProps) {
               <div className="flex items-center justify-between gap-3">
                 <Link
                   href="/"
-                  className="shrink-0"
+                  className="-ml-[12px] shrink-0"
                   onClick={() => setMenuOpen(false)}
                 >
-                  <BlumuLogo size="sm" priority={false} />
+                  <BlumuLogo size="md" priority={false} />
                 </Link>
                 <button
                   type="button"

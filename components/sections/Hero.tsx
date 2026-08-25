@@ -175,43 +175,42 @@ function HeroDesktop() {
 
 function HeroMobile() {
   return (
-    <div className="relative z-10 lg:hidden">
-      <div className="relative h-[50vh] min-h-[360px]">
-        <div className="absolute inset-0 overflow-hidden">
-          <HeroBackground variant="mobile" />
-        </div>
-        <div className="absolute inset-x-0 top-0 px-5 pt-[5.5rem]">
-          <h1 className="max-w-[300px] text-left font-display text-[2rem] leading-[1.12] font-semibold text-white">
-            Pagalba,
-            <br />
-            kai jos reikia.
-          </h1>
-          <p className="mt-3 max-w-[280px] text-left text-[15px] leading-relaxed font-normal text-zinc-200">
-            Rask patikimus specialistus savo mieste arba sukurk užduotį ir gauk
-            pasiūlymus realiu laiku.
-          </p>
-        </div>
+    <div className="relative min-h-screen w-full lg:hidden">
+      {/* Background — full bleed */}
+      <div className="absolute inset-0 overflow-hidden" aria-hidden>
+        <HeroBackground variant="mobile" />
       </div>
 
-      <div className="relative -mt-4 h-[44vh] min-h-[300px]">
+      {/* Content stack: headline → subtitle → button → phone */}
+      <div className="relative z-10 flex flex-col px-6 pt-20 pb-0">
+        <h1 className="font-display text-4xl font-medium text-white">
+          Pagalba,
+          <br />
+          kai jos reikia.
+        </h1>
+        <p className="mt-3 text-base text-zinc-300">
+          Rask patikimus specialistus savo mieste arba sukurk užduotį ir gauk
+          pasiūlymus realiu laiku.
+        </p>
         <a
           href="#privalumai"
-          className="absolute bottom-[60%] left-4 z-20 inline-block rounded-full bg-[#E85002] px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-[#d04600]"
+          className="mt-6 inline-flex h-14 w-fit items-center justify-center rounded-[18px] bg-[#E85002] px-8 text-base font-semibold text-white shadow-lg transition hover:bg-[#d04600]"
         >
           Sužinoti Daugiau
         </a>
-
-        <div className="absolute bottom-0 left-1/2 z-10 w-[58vw] max-w-[250px] -translate-x-1/2 translate-y-[6%]">
-          <HeroOrangeGlow />
-          <Image
-            src={images.heroMobile}
-            alt="Blumu mobile programėlė"
-            width={250}
-            height={520}
-            loading="eager"
-            sizes="250px"
-            className="relative z-10 h-auto w-full"
-          />
+        <div className="mt-8 flex justify-end">
+          <div className="relative w-full max-w-[280px] translate-x-3">
+            <HeroOrangeGlow />
+            <Image
+              src={images.heroMobile}
+              alt="Blumu mobile programėlė"
+              width={280}
+              height={580}
+              loading="eager"
+              sizes="280px"
+              className="relative z-10 h-auto w-full"
+            />
+          </div>
         </div>
       </div>
     </div>

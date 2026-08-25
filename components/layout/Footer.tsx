@@ -6,7 +6,7 @@ import { Container } from "@/components/layout/Container";
 const footerLinks = [
   { href: "/privacy", label: "Privatumo politika" },
   { href: "/terms", label: "Taisyklės ir sąlygos" },
-  { href: "/#ikainiai", label: "Įkainiai" },
+  // { href: "/#ikainiai", label: "Įkainiai" },
   { href: "/#kontaktai", label: "Kontaktai" },
   { href: "/#duk", label: "D.U.K." },
 ] as const;
@@ -16,8 +16,10 @@ export function Footer() {
     <footer className="w-full border-t border-white/10 bg-black">
       <Container className="py-16">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
-          <div>
-            <BlumuLogo size="sm" priority={false} />
+        <div>
+        <div className="-ml-3">
+            <BlumuLogo size="md" priority={false} />
+        </div>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-zinc-400">
               Blumu – platforma, jungianti klientus ir meistrus. Raskite arba
               gaukite užsakymus greitai, patogiai ir be tarpininkų.
@@ -25,14 +27,18 @@ export function Footer() {
             <p className="mb-3 mt-6 text-sm text-zinc-500">Sekite mus:</p>
             <div className="flex gap-3">
               <a
-                href="#"
+                href="https://www.facebook.com/app.blumu"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Facebook"
                 className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#1877F2] text-white transition hover:scale-105"
               >
                 <FacebookIcon className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/blumu.app/"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Instagram"
                 className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#E1306C] text-white transition hover:scale-105"
               >

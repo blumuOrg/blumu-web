@@ -59,16 +59,6 @@ const rightFeatures: FeatureData[] = [
   },
 ];
 
-function FeatureColumn({ items }: { items: FeatureData[] }) {
-  return (
-    <div className="flex flex-col gap-10">
-      {items.map((item) => (
-        <FeatureItem key={item.title} {...item} />
-      ))}
-    </div>
-  );
-}
-
 export function Features() {
   return (
     <section id="privalumai" className="w-full bg-black py-20 md:py-28">
@@ -80,16 +70,23 @@ export function Features() {
         </Reveal>
 
         <Reveal delay={100}>
-          <div className="mt-16 hidden items-center gap-12 lg:grid lg:grid-cols-3">
-            <FeatureColumn items={leftFeatures} />
-            <FeaturesPhoneVisual />
-            <FeatureColumn items={rightFeatures} />
-          </div>
+          {/* Mobile: single column, centered. Desktop: 3-col grid. */}
+          <div className="mt-16 flex flex-col items-center gap-12 text-center md:gap-14 lg:grid lg:grid-cols-3 lg:items-center lg:gap-12 lg:text-left">
+            <div className="flex flex-col gap-12 md:gap-14 lg:gap-10">
+              {leftFeatures.map((item) => (
+                <FeatureItem key={item.title} {...item} />
+              ))}
+            </div>
 
-          <div className="mt-16 flex flex-col gap-10 lg:hidden">
-            <FeatureColumn items={leftFeatures} />
-            <FeaturesPhoneVisual className="py-4" />
-            <FeatureColumn items={rightFeatures} />
+            <div className="flex justify-center">
+              <FeaturesPhoneVisual className="mx-auto py-4 lg:py-0" />
+            </div>
+
+            <div className="flex flex-col gap-12 md:gap-14 lg:gap-10">
+              {rightFeatures.map((item) => (
+                <FeatureItem key={item.title} {...item} />
+              ))}
+            </div>
           </div>
         </Reveal>
       </Container>

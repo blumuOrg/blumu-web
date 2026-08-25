@@ -5,7 +5,7 @@ import { AboutBlumu } from "@/components/sections/AboutBlumu";
 import { DownloadCTA } from "@/components/sections/DownloadCTA";
 import { Features } from "@/components/sections/Features";
 import { Hero } from "@/components/sections/Hero";
-import { Pricing } from "@/components/sections/Pricing";
+// import { Pricing } from "@/components/sections/Pricing";
 
 const FAQ = dynamic(
   () => import("@/components/sections/FAQ").then((mod) => mod.FAQ),
@@ -38,7 +38,9 @@ export default function HomePage() {
         <AboutBlumu />
         <DownloadCTA />
         <Features />
+        {/* PRICING SECTION — hidden temporarily
         <Pricing />
+        */}
         <FAQ />
         <Contact />
       </main>
