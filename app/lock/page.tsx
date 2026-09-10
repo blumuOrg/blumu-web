@@ -28,25 +28,27 @@ const socials = [
 ] as const;
 
 /**
- * Translucent glass tray — no solid black, no white border.
+ * Translucent glass tray — black soft silhouette at reduced opacity (Figma).
  */
 function LogoTrayBadge() {
   return (
     <div className="absolute -top-3 left-1/2 z-20 hidden w-[min(600px,94vw)] -translate-x-1/2 md:block">
       <div className="relative flex aspect-[985/306] w-full items-center justify-center">
-        <div
-          className="pointer-events-none absolute inset-0"
-          style={{
-            WebkitMaskImage: "url(/images/lock_tray_mask.png)",
-            maskImage: "url(/images/lock_tray_mask.png)",
-            WebkitMaskSize: "100% 100%",
-            maskSize: "100% 100%",
-            WebkitMaskRepeat: "no-repeat",
-            maskRepeat: "no-repeat",
-            background: "rgba(0,0,0,0.18)",
-          }}
-          aria-hidden
-        />
+        {/* Black translucent tray + soft outer drop shadow */}
+        <div className="pointer-events-none absolute inset-0" aria-hidden>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/lock_tray_shadow.png"
+            alt=""
+            className="absolute inset-0 h-full w-full object-fill"
+            style={{
+              filter: `
+                drop-shadow(0 4px 14px rgba(0, 0, 0, 0.4))
+                drop-shadow(0 10px 28px rgba(0, 0, 0, 0.28))
+              `,
+            }}
+          />
+        </div>
         <Image
           src={images.logo}
           alt="BLUMU"
