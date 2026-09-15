@@ -3,10 +3,12 @@ import Image from "next/image";
 import { images } from "@/lib/image-paths";
 
 export const metadata: Metadata = {
-  title: "Blumu — Jau greitai",
+  title: "Blumu - Jau greitai",
   description:
     "Patikimo meistro paieška neturėtų būti sudėtinga. Kuriame Blumu – platformą, kuri sujungs patikrintus meistrus su žmonėmis, kuriems jų pagalbos reikia čia ir dabar.",
   robots: { index: true, follow: true },
+  // Matches lock page base so Safari chrome / overscroll aren't pure black
+  themeColor: "#3a1810",
 };
 
 const socials = [

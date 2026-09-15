@@ -28,20 +28,17 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/images/favicon/favicon.ico" },
+      { url: "/images/favicon/favicon.svg", type: "image/svg+xml" },
       {
-        url: "/images/favicon/favicon-16x16.png",
-        sizes: "16x16",
-        type: "image/png",
-      },
-      {
-        url: "/images/favicon/favicon-32x32.png",
-        sizes: "32x32",
+        url: "/images/favicon/favicon-96x96.png",
+        sizes: "96x96",
         type: "image/png",
       },
     ],
     apple: "/images/favicon/apple-touch-icon.png",
   },
   manifest: "/images/favicon/site.webmanifest",
+  themeColor: "#3a1810",
 };
 
 export default function RootLayout({
@@ -78,7 +75,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${poppins.variable} relative min-h-full overflow-x-hidden bg-black font-sans text-white antialiased`}
+        className={`${inter.variable} ${poppins.variable} relative min-h-full overflow-x-hidden bg-[#3a1810] font-sans text-white antialiased`}
       >
         <HashScrollOnNavigate />
         {children}
