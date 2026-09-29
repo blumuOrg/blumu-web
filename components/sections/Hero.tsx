@@ -92,6 +92,34 @@ function HeroDesktopCopy() {
       >
         Sužinoti Daugiau
       </a>
+      <div className="mt-4 flex flex-wrap justify-start gap-3 md:justify-start">
+        <a
+          href="https://apps.apple.com/lt/app/blumu/id6787410678"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            src={images.appStoreLogo}
+            alt="Download on the App Store"
+            width={135}
+            height={40}
+            className="h-10 w-auto"
+          />
+        </a>
+        <a
+          href="https://play.google.com/store/apps/details?id=eu.blumu.app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            src={images.googlePlayLogo}
+            alt="Get it on Google Play"
+            width={135}
+            height={40}
+            className="h-10 w-auto"
+          />
+        </a>
+      </div>
     </div>
   );
 }
@@ -198,6 +226,34 @@ function HeroMobile() {
         >
           Sužinoti Daugiau
         </a>
+        <div className="mt-4 flex flex-wrap justify-start gap-3 md:justify-start">
+          <a
+            href="https://apps.apple.com/lt/app/blumu/id6787410678"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src={images.appStoreLogo}
+              alt="Download on the App Store"
+              width={135}
+              height={40}
+              className="h-10 w-auto"
+            />
+          </a>
+          <a
+            href="https://play.google.com/store/apps/details?id=eu.blumu.app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src={images.googlePlayLogo}
+              alt="Get it on Google Play"
+              width={135}
+              height={40}
+              className="h-10 w-auto"
+            />
+          </a>
+        </div>
         <div className="mt-8 flex justify-end">
           <div className="relative w-full max-w-[280px] translate-x-3">
             <HeroOrangeGlow />

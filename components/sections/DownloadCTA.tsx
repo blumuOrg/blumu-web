@@ -15,7 +15,12 @@ export function DownloadCTA() {
 
         <Reveal delay={120}>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-          <a href="#" className="transition hover:opacity-80">
+          <a
+            href="https://apps.apple.com/lt/app/blumu/id6787410678"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition hover:opacity-80"
+          >
             <Image
               src={images.appStoreLogo}
               alt="Atsisiųsk iš App Store"
@@ -26,7 +31,12 @@ export function DownloadCTA() {
               className="h-14 w-auto"
             />
           </a>
-          <a href="#" className="transition hover:opacity-80">
+          <a
+            href="https://play.google.com/store/apps/details?id=eu.blumu.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition hover:opacity-80"
+          >
             <Image
               src={images.googlePlayLogo}
               alt="Atsisiųsk iš Google Play"

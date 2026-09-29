@@ -13,6 +13,10 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
+const APP_STORE_URL = "https://apps.apple.com/lt/app/blumu/id6787410678";
+const PLAY_STORE_URL =
+  "https://play.google.com/store/apps/details?id=eu.blumu.app";
+
 const navItems = [
   { href: "/#apie", label: "Apie" },
   { href: "/#privalumai", label: "Privalumai" },
@@ -25,17 +29,21 @@ const sheetIconBtnClass =
   "flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-white/15 bg-white/5 transition hover:bg-white/10";
 
 function StoreIconLink({
+  href,
   src,
   label,
   bordered = false,
 }: {
+  href: string;
   src: string;
   label: string;
   bordered?: boolean;
 }) {
   return (
     <a
-      href="#"
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
       aria-label={label}
       className={cn(
         "flex h-9 w-9 shrink-0 items-center justify-center transition hover:opacity-80",
@@ -65,7 +73,9 @@ function StoreButtons({
   return (
     <div className={className}>
       <a
-        href="#"
+        href={APP_STORE_URL}
+        target="_blank"
+        rel="noopener noreferrer"
         aria-label="App Store"
         className="shrink-0 transition hover:opacity-80"
       >
@@ -78,7 +88,9 @@ function StoreButtons({
         />
       </a>
       <a
-        href="#"
+        href={PLAY_STORE_URL}
+        target="_blank"
+        rel="noopener noreferrer"
         aria-label="Google Play"
         className="shrink-0 transition hover:opacity-80"
       >
@@ -137,8 +149,16 @@ export function Navbar({ overlay = false }: NavbarProps) {
         </div>
 
         <div className="flex items-center gap-2 md:hidden">
-          <StoreIconLink src={images.navbarAppStore} label="App Store" />
-          <StoreIconLink src={images.navbarGooglePlay} label="Google Play" />
+          <StoreIconLink
+            href={APP_STORE_URL}
+            src={images.navbarAppStore}
+            label="App Store"
+          />
+          <StoreIconLink
+            href={PLAY_STORE_URL}
+            src={images.navbarGooglePlay}
+            label="Google Play"
+          />
           <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
             <SheetTrigger
               render={
