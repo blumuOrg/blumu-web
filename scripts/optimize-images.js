@@ -1,6 +1,6 @@
-const sharp = require('sharp');
-const fs = require('fs');
-const path = require('path');
+import sharp from 'sharp';
+import fs from 'node:fs';
+import path from 'node:path';
 
 // Pagal Next.js Image displayinimo dydžius, plus 2x retina margin
 const targets = [

@@ -5,8 +5,19 @@ import { fileURLToPath } from "node:url";
 const projectRoot = path.dirname(fileURLToPath(import.meta.url));
 
 const nextConfig: NextConfig = {
+  output: "standalone",
   turbopack: {
     root: projectRoot,
+  },
+  async headers() {
+    return process.env.BLUMU_NOINDEX === "true"
+      ? [
+          {
+            source: "/:path*",
+            headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
+          },
+        ]
+      : [];
   },
   async redirects() {
     return [

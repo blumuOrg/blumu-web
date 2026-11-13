@@ -1,0 +1,106 @@
+name: Deploy development web
+
+on:
+  push:
+    branches: [development]
+  pull_request:
+    branches: [development]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: blumu-web-${{ github.event_name == 'pull_request' && github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    name: Check and build web
+    runs-on: ubuntu-22.04
+    timeout-minutes: 20
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      NEXT_PUBLIC_API_URL: ${{ vars.DEV_API_URL || 'https://blumu-dev.itcollar.com' }}
+      NEXT_PUBLIC_SITE_URL: ${{ vars.DEV_APP_URL || 'https://blumu-web-dev.itcollar.com' }}
+      BLUMU_NOINDEX: 'true'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Check code and deployment scripts
+        run: |
+          npm run lint
+          for script in deploy/cloudpanel/*.sh; do bash -n "$script"; done
+          node --check deploy/cloudpanel/ecosystem.config.cjs
+          node --check deploy/cloudpanel/check-health.mjs
+
+      - name: Build web and check types
+        run: npm run build
+
+      - name: Package and test the release
+        run: |
+          bash deploy/cloudpanel/package.sh "$RUNNER_TEMP/blumu-web.tar.gz"
+          bash deploy/cloudpanel/check-start.sh "$RUNNER_TEMP/blumu-web.tar.gz"
+
+      - name: Upload release
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/development'
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: blumu-web-${{ github.sha }}
+          path: ${{ runner.temp }}/blumu-web.tar.gz
+          retention-days: 3
+          if-no-files-found: error
+          overwrite: true
+
+  deploy:
+    name: Deploy web to intika-d2
+    needs: build
+    if: github.ref == 'refs/heads/development' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    environment:
+      name: development
+      url: ${{ vars.DEV_APP_URL || 'https://blumu-web-dev.itcollar.com' }}
+    env:
+      SSH_HOST: ${{ vars.DEV_SSH_HOST }}
+      SSH_PORT: ${{ vars.DEV_SSH_PORT || '22' }}
+      SSH_USER: ${{ vars.DEV_SSH_USER }}
+      BASE_DIR: ${{ vars.DEV_BASE_DIR }}
+      NODE_BIN: ${{ vars.DEV_NODE_BIN }}
+      APP_URL: ${{ vars.DEV_APP_URL || 'https://blumu-web-dev.itcollar.com' }}
+      PM2_APP_NAME: ${{ vars.DEV_PM2_APP_NAME || 'blumu-dev-web' }}
+      APP_PORT: ${{ vars.DEV_APP_PORT || '3001' }}
+      KEEP_RELEASES: ${{ vars.DEV_KEEP_RELEASES || '5' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+
+      - name: Download tested release
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: blumu-web-${{ github.sha }}
+          path: ${{ runner.temp }}/release
+
+      - name: Deploy release
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.DEV_SSH_PRIVATE_KEY }}
+          SSH_KNOWN_HOSTS: ${{ secrets.DEV_SSH_KNOWN_HOSTS }}
+        run: bash deploy/cloudpanel/deploy.sh "$RUNNER_TEMP/release/blumu-web.tar.gz"

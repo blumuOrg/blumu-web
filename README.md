@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Blumu web
 
-## Getting Started
+The website uses Next.js 16 and React 19.
+The backend is in the separate `blumuOrg/blumu` repository.
 
-First, run the development server:
+## Local development
+
+Use the Node.js version in `.nvmrc`.
+Copy `.env.example` to `.env.local`.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm ci
+npm run dev -- --port 3001
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The API uses port `3000` and the website uses port `3001`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Run `npm run lint` to check the code.
+Run `npm run build` to check types and build the website.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Development deployment
 
-## Learn More
+Follow [the CloudPanel deployment guide](deploy/cloudpanel/README.md).
 
-To learn more about Next.js, take a look at the following resources:
+- Server: `intika-d2` (`173.212.214.75`, from the backend deployment settings).
+- Website: `https://blumu-web-dev.itcollar.com`.
+- API: `https://blumu-dev.itcollar.com`.
+- Branch: `development`.
+- Workflow: `.github/workflows/deploy-development.yml`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+A push to `development` checks, builds, tests and deploys the website.
+A pull request into `development` runs the checks without deployment.
+Complete the server and GitHub setup before the first push.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The workflow builds a standalone Node.js application.
+The server starts `server.js` with PM2.
+The release archive includes the public files and the generated static files.
+The API and website use separate ports and site users.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Set `NEXT_PUBLIC_API_URL` and `NEXT_PUBLIC_SITE_URL` before the build.
+Set `BLUMU_NOINDEX=true` before each development build.
+For a production build, leave `BLUMU_NOINDEX` unset or set it to `false`.

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import { HashScrollOnNavigate } from "@/components/layout/HashScrollOnNavigate";
+import { SITE_URL } from "@/lib/site-url";
 import "./globals.css";
 
 const inter = Inter({
@@ -18,7 +19,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://blumu.eu"),
+  metadataBase: new URL(SITE_URL),
   alternates: {
     canonical: "/",
   },

@@ -72,7 +72,7 @@ export function Footer() {
             <ul className="flex flex-col gap-2 text-sm text-zinc-300">
               <li>info@blumu.eu</li>
               <li>+370 611 11549</li>
-              <li>MB „Blumu"</li>
+              <li>MB „Blumu“</li>
               <li>H. Manto g. 76, LT-92222 Klaipėda</li>
               <li>Įm. k. 307861634</li>
             </ul>
