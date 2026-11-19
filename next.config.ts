@@ -10,14 +10,14 @@ const nextConfig: NextConfig = {
     root: projectRoot,
   },
   async headers() {
-    return process.env.BLUMU_NOINDEX === "true"
-      ? [
-          {
-            source: "/:path*",
-            headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
-          },
-        ]
-      : [];
+    const headers = [
+      { key: "X-Content-Type-Options", value: "nosniff" },
+      { key: "Content-Security-Policy", value: "frame-ancestors 'none'" },
+    ];
+    if (process.env.BLUMU_NOINDEX === "true") {
+      headers.push({ key: "X-Robots-Tag", value: "noindex, nofollow" });
+    }
+    return [{ source: "/:path*", headers }];
   },
   async redirects() {
     return [

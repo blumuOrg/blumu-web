@@ -60,7 +60,7 @@
 
 **6.2. Atsiskaitymas už paslaugas:** Užsakovas atsiskaito tiesiogiai su Teikėju (grynaisiais pinigais arba bankiniu pavedimu) pagal jų tarpusavio susitarimą.
 
-**6.3. Platformos mokesčiai Teikėjams:** Platforma Užsakovams (klientams) yra nemokama. Teikėjams bazinės Platformos funkcijos yra teikiamos nemokamai bandomuoju laikotarpiu iki **2026 m. lapkričio 1 d.** Pasibaigus šiam laikotarpiui, Teikėjų paskyroms pradedamas taikyti standartinis prenumeratos mokestis, nurodytas Platformos kainyne.
+**6.3. Platformos mokesčiai Teikėjams:** Platforma Užsakovams (klientams) yra nemokama. Teikėjams bazinės Platformos funkcijos yra teikiamos nemokamai 30 dienų bandomuoju laikotarpiu. Jis prasideda dieną, kai Platformoje įjungiamos prenumeratos, arba Teikėjo patvirtinimo dieną, jei Teikėjas patvirtinamas vėliau. Bandomasis laikotarpis suteikiamas vieną kartą. Jo pabaigos data rodoma programėlėje. Pasibaigus šiam laikotarpiui, Teikėjų paskyroms pradedamas taikyti standartinis prenumeratos mokestis, nurodytas Platformos kainyne.
 
 **6.4. Mokamas matomumas (Skelbimų iškėlimas):** Teikėjai turi teisę savanoriškai įsigyti mokamas iškėlimo (žvaigždučių) paslaugas, kurios padidina jų profilio matomumą bendrajame paieškos kataloge. Šis mokamas iškėlimas neturi įtakos geolokaciniam žemėlapiui, kuriame Teikėjai rodomi išskirtinai pagal realų fizinį atstumą iki Užsakovo.
 
