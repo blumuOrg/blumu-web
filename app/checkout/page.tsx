@@ -38,8 +38,6 @@ export default async function CheckoutPage({ searchParams }: CheckoutPageProps) 
         <PaymentStatusView
           title="Klaida"
           message="Atidaryk per programėlę"
-          actionHref="blumu://payment/cancel"
-          actionLabel="Grįžti į programėlę"
         />
       </MarketingShell>
     );
@@ -60,8 +58,6 @@ export default async function CheckoutPage({ searchParams }: CheckoutPageProps) 
         <PaymentStatusView
           title="Klaida"
           message="Nepavyko prisijungti prie mokėjimo sistemos. Bandyk dar kartą vėliau."
-          actionHref="blumu://payment/cancel"
-          actionLabel="Grįžti į programėlę"
         />
       </MarketingShell>
     );
@@ -77,8 +73,6 @@ export default async function CheckoutPage({ searchParams }: CheckoutPageProps) 
             problemMessage(response.status, body) ??
             "Nepavyko sukurti mokėjimo sesijos. Bandyk dar kartą vėliau."
           }
-          actionHref="blumu://payment/cancel"
-          actionLabel="Grįžti į programėlę"
         />
       </MarketingShell>
     );
@@ -94,8 +88,6 @@ export default async function CheckoutPage({ searchParams }: CheckoutPageProps) 
         <PaymentStatusView
           title="Klaida"
           message="Gautas neteisingas atsakymas iš serverio."
-          actionHref="blumu://payment/cancel"
-          actionLabel="Grįžti į programėlę"
         />
       </MarketingShell>
     );
@@ -117,8 +109,6 @@ export default async function CheckoutPage({ searchParams }: CheckoutPageProps) 
       <PaymentStatusView
         title="Klaida"
         message="Nepavyko gauti mokėjimo nuorodos. Bandyk dar kartą vėliau."
-        actionHref="blumu://payment/cancel"
-        actionLabel="Grįžti į programėlę"
       />
     </MarketingShell>
   );
